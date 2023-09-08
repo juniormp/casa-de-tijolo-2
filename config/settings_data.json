@@ -1,8 +1,8 @@
 {
   "current": {
-    "logo": "shopify://shop_images/casa_de_maidera_-_preto.png",
+    "logo": "shopify:\/\/shop_images\/casa_de_maidera_-_preto.png",
     "logo_width": 170,
-    "favicon": "shopify://shop_images/favicon-32x32.png",
+    "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
     "type_header_font": "poppins_n4",
     "heading_scale": 140,
     "type_body_font": "poppins_n5",
@@ -99,7 +99,7 @@
     "sale_badge_color_scheme": "scheme-4af7577f-34ad-4051-9aef-b279e3b2b619",
     "sold_out_badge_color_scheme": "scheme-4af7577f-34ad-4051-9aef-b279e3b2b619",
     "brand_headline": "",
-    "brand_description": "<p></p>",
+    "brand_description": "<p><\/p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -132,7 +132,9 @@
         }
       }
     },
-    "content_for_index": [],
+    "content_for_index": [
+
+    ],
     "color_schemes": {
       "background-1": {
         "settings": {
@@ -380,7 +382,7 @@
       "sale_badge_color_scheme": "inverse",
       "sold_out_badge_color_scheme": "background-1",
       "brand_headline": "",
-      "brand_description": "<p></p>",
+      "brand_description": "<p><\/p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
