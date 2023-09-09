@@ -3,6 +3,11 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "085841eb-1d63-4d55-ba35-84849e4497e1": {
+          "type": "shopify:\/\/apps\/prime-bundles\/blocks\/bundles\/a516f331-a399-4330-9218-78d90fb9cf5e",
+          "settings": {
+          }
+        },
         "vendor": {
           "type": "text",
           "disabled": true,
@@ -61,14 +66,10 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "085841eb-1d63-4d55-ba35-84849e4497e1": {
-          "type": "shopify:\/\/apps\/prime-bundles\/blocks\/bundles\/a516f331-a399-4330-9218-78d90fb9cf5e",
-          "settings": {
-          }
         }
       },
       "block_order": [
+        "085841eb-1d63-4d55-ba35-84849e4497e1",
         "vendor",
         "title",
         "product-rating",
@@ -77,8 +78,7 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share",
-        "085841eb-1d63-4d55-ba35-84849e4497e1"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
