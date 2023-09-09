@@ -17,11 +17,6 @@
           "settings": {
           }
         },
-        "cd72953e-979a-4b49-a179-9f0479768fdc": {
-          "type": "shopify:\/\/apps\/prime-bundles\/blocks\/bundles\/a516f331-a399-4330-9218-78d90fb9cf5e",
-          "settings": {
-          }
-        },
         "product-rating": {
           "type": "rating",
           "disabled": true,
@@ -71,7 +66,6 @@
       "block_order": [
         "vendor",
         "title",
-        "cd72953e-979a-4b49-a179-9f0479768fdc",
         "product-rating",
         "price",
         "variant_picker",
