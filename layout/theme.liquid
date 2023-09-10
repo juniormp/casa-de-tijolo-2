@@ -525,29 +525,27 @@
     {% endunless %}
     <!-- Não remova. Checkout Yampi. -->
     <script defer>
-      let buttons = document.querySelectorAll('#prime-bundles');
-      console.log("BUTTON")
-            console.log(buttons)
-      
-            const observer = new MutationObserver(function(mutations) {
-              let buttons = document.querySelectorAll('#prime-bundles');
-      
-              if (buttons.length) {
-                buttons.forEach(function(button) {
-                  button.addEventListener('click', function(event) {
-                    event.preventDefault(); // Stop the default behavior
-                    location.href = "/cart"; // Redirect to Yampi checkout
-                  });
-                });
-      
-                observer.disconnect(); // Disconnect the observer after modifying the buttons
-              }
-            });
-      
-            observer.observe(document.body, {
-              childList: true,
-              subtree: true
-            });
+      const observer = new MutationObserver(function(mutations) {
+      let buttons = document.querySelectorAll('.shopify-payment-button__button');
+                              console.log("AQUI")
+                                      if (buttons.length) {
+                                        console.log("AQUI2")
+                                        buttons.forEach(function(button) {
+                                          button.addEventListener('click', function(event) {
+                                            event.preventDefault(); // Stop the default behavior
+                                            location.href = "/cart"; // Redirect to Yampi checkout
+                                          });
+                                        });
+                              
+                                        observer.disconnect(); // Disconnect the observer after modifying the buttons
+                                      }
+                                    });
+                              
+                                    observer.observe(document.body, {
+                                      childList: true,
+                                      subtree: true
+                                    });
+
     </script>
   </body>
 </html>
