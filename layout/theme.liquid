@@ -515,19 +515,13 @@
     </script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log("DENTRO")
-        var buttons = document.querySelectorAll('#prime-bundles');
+      setTimeout(function() {
+        let buttons = document.querySelectorAll('#prime-bundles');
         console.log("BUTTON")
         console.log(buttons)
-        buttons.forEach(function(button) {
-          button.addEventListener('click', function(event) {
-            console.log('-------> pb-buy-button-text')
-            event.preventDefault(); // previne a ação padrão
-          });
-        });
-      });
+      }, 5000);
     </script>
+
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
