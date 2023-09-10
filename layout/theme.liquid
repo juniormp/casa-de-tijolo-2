@@ -525,36 +525,39 @@
     {% endunless %}
     <!-- Não remova. Checkout Yampi. -->
     <script>
-      setTimeout(function() {
-        const bundle = document.querySelector('div#prime-bundles.bundle.is-selected-bundle');
-        if (bundle) {
-          var event = new MouseEvent('click', {
-            'bubbles': true,
-            'cancelable': true,
-            'view': window
-          });
-          bundle.dispatchEvent(event);
-        }
+      document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+          const bundle = document.querySelector('div#prime-bundles.bundle.is-selected-bundle');
+          if (bundle) {
+            console.log('GLUB')
+            var event = new MouseEvent('click', {
+              'bubbles': true,
+              'cancelable': true,
+              'view': window
+            });
+            bundle.dispatchEvent(event);
+          }
 
-        console.log(bundle)
-        console.log('FOO')
-        let button = document.querySelector('button#prime-bundles');
-        console.log(button)
-
-        const observer = new MutationObserver(function(mutations) {
+          console.log(bundle)
+          console.log('FOO')
+          let button = document.querySelector('button#prime-bundles');
           console.log(button)
-          button.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the default behavior
-            location.href = "/cart"; // Redirect to Yampi checkout
-          });
-          observer.disconnect(); // Disconnect the observer after modifying the buttons
-        });
 
-        observer.observe(document.body, {
-          childList: true,
-          subtree: true
-        });
-      }, 2000);
+          const observer = new MutationObserver(function(mutations) {
+            console.log(button)
+            button.addEventListener('click', function(event) {
+              event.preventDefault(); // Stop the default behavior
+              location.href = "/cart"; // Redirect to Yampi checkout
+            });
+            observer.disconnect(); // Disconnect the observer after modifying the buttons
+          });
+
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        }, 2000);
+      });
     </script>
   </body>
 </html>
