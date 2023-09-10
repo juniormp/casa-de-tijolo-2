@@ -525,24 +525,29 @@
     {% endunless %}
     <!-- Não remova. Checkout Yampi. -->
     <script>
-      setTimeout(function() {
-        let buttons = document.querySelectorAll('#prime-bundles');
-        console.log("BUTTON")
-        console.log(buttons)
+      let buttons = document.querySelectorAll('#prime-bundles');
+      console.log("BUTTON")
+      console.log(buttons)
 
-        document.addEventListener('DOMContentLoaded', function() {
-          console.log("DENTRO")
-          var buttons = document.querySelectorAll('#prime-bundles');
-          console.log("BUTTON")
-          console.log(buttons)
+      const observer = new MutationObserver(function(mutations) {
+        let buttons = document.querySelectorAll('#prime-bundles');
+
+        if (buttons.length) {
           buttons.forEach(function(button) {
             button.addEventListener('click', function(event) {
-              console.log('-------> pb-buy-button-text')
-              event.preventDefault(); // previne a ação padrão
+              event.preventDefault(); // Stop the default behavior
+              location.href = "/cart"; // Redirect to Yampi checkout
             });
           });
-        });
-      }, 2000);
+
+          observer.disconnect(); // Disconnect the observer after modifying the buttons
+        }
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
     </script>
   </body>
 </html>
