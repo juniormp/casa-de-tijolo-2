@@ -81,7 +81,7 @@
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
-          >
+            onclick='JavaScript:timedRedirect()'>
             <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
@@ -107,6 +107,13 @@
         </div>
       {%- endform -%}
     </product-form>
+    <script>
+      redirectTime = "500";
+      redirectURL = "/cart";
+      function timedRedirect() {
+        setTimeout("location.href = redirectURL;",redirectTime);
+      }
+    </script>
   {%- else -%}
     <div class="product-form">
       <div class="product-form__buttons form">
