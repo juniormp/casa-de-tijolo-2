@@ -526,24 +526,22 @@
     <!-- Não remova. Checkout Yampi. -->
     <script>
       console.log('FOO')
-      setTimeout(function() {
-        let button = document.querySelector('button#prime-bundles');
+      let button = document.querySelector('button#prime-bundles');
+      console.log(button)
+
+      const observer = new MutationObserver(function(mutations) {
         console.log(button)
-
-        const observer = new MutationObserver(function(mutations) {
-          console.log(button)
-          button.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the default behavior
-            location.href = "/cart"; // Redirect to Yampi checkout
-          });
-          observer.disconnect(); // Disconnect the observer after modifying the buttons
+        button.addEventListener('click', function(event) {
+          event.preventDefault(); // Stop the default behavior
+          location.href = "/cart"; // Redirect to Yampi checkout
         });
+        observer.disconnect(); // Disconnect the observer after modifying the buttons
+      });
 
-        observer.observe(document.body, {
-          childList: true,
-          subtree: true
-        });
-      }, 5000);
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
     </script>
   </body>
 </html>
