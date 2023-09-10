@@ -514,17 +514,17 @@
       };
     </script>
 
-    <script defer>
+    <script>
       document.addEventListener('DOMContentLoaded', function() {
-      var buttons = document.querySelectorAll('.pb-buy-button-text');
-                  buttons.forEach(function(button) {
-                    button.addEventListener('click', function(event) {
-                      console.log('-------> pb-buy-button-text')
-                      event.preventDefault(); // previne a ação padrão
-                      window.location.href = '/cart';
-                    });
-                  });
-                });
+        var buttons = document.querySelectorAll('.pb-buy-button-text');
+        buttons.forEach(function(button) {
+          button.addEventListener('click', function(event) {
+            console.log('-------> pb-buy-button-text')
+            event.preventDefault(); // previne a ação padrão
+            window.location.href = '/cart';
+          });
+        });
+      });
     </script>
 
     {%- if settings.predictive_search_enabled -%}
