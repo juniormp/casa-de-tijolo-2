@@ -524,27 +524,24 @@
       {% include 'YampiSnippet' %}
     {% endunless %}
     <!-- Não remova. Checkout Yampi. -->
-    <script defer>
-      let buttons = document.querySelectorAll('.shopify-payment-button__button');            
-      const observer = new MutationObserver(function(mutations) {
-                                let buttons = document.querySelectorAll('.shopify-payment-button__button');
-                                console.log(buttons)
-                                if (buttons.length) {
-                                  buttons.forEach(function(button) {
-                                    button.addEventListener('click', function(event) {
-                                      event.preventDefault(); // Stop the default behavior
-                                      location.href = "/cart"; // Redirect to Yampi checkout
-                                    });
-                                  });
-                        
-                                  observer.disconnect(); // Disconnect the observer after modifying the buttons
-                                }
-                              });
-                        
-                              observer.observe(document.body, {
-                                childList: true,
-                                subtree: true
-                              });
+    <script>
+      console.log('FOO')
+      const observer = new MutationObserver(function() {
+        let buyButton = document.querySelector('button#prime-bundles'); // Target the button using the combination of ID and type
+
+        if (buyButton) {
+          buyButton.removeEventListener('click', redirectToYampi); // Remove any existing listeners
+          buyButton.addEventListener('click', redirectToYampi); // Add the redirect listener
+        }
+      });
+
+      function redirectToYampi(event) {
+        event.preventDefault(); // Stop the default behavior
+        location.href = "/cart"; // Redirect to Yampi checkout
+      }observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
     </script>
   </body>
 </html>
