@@ -527,20 +527,7 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
-          const bundle = document.querySelector('div#prime-bundles.bundle.is-selected-bundle');
-          if (bundle) {
-            console.log('GLUB')
-            var event = new MouseEvent('click', {
-              'bubbles': true,
-              'cancelable': true,
-              'view': window
-            });
-            const isSuccess = bundle.dispatchEvent(event);
-            console.log(isSuccess)
-          }
-
-          console.log(bundle)
-          console.log('FOO')
+          console.log('--- 1')
           let button = document.querySelector('button#prime-bundles');
           console.log(button)
 
@@ -557,6 +544,18 @@
             childList: true,
             subtree: true
           });
+
+          const bundle = document.querySelector('div#prime-bundles.bundle.is-selected-bundle');
+          if (bundle) {
+            console.log('--- 2')
+            var event = new MouseEvent('click', {
+              'bubbles': true,
+              'cancelable': true,
+              'view': window
+            });
+            const isSuccess = bundle.dispatchEvent(event);
+            console.log(isSuccess)
+          }
         }, 2000);
       });
     </script>
