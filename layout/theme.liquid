@@ -513,7 +513,17 @@
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`
       };
     </script>
-
+    {%- if settings.predictive_search_enabled -%}
+      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    {%- render "ecom_footer" -%}
+    <!-- Não remova. Checkout Yampi. -->
+    {% capture yampi_snippet_content %}
+      {% include 'YampiSnippet' %}{% endcapture %}
+    {% unless yampi_snippet_content contains 'Liquid error' %}
+      {% include 'YampiSnippet' %}
+    {% endunless %}
+    <!-- Não remova. Checkout Yampi. -->
     <script>
       setTimeout(function() {
         let buttons = document.querySelectorAll('#prime-bundles');
@@ -534,18 +544,5 @@
         });
       }, 2000);
     </script>
-
-
-    {%- if settings.predictive_search_enabled -%}
-      <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
-    {%- render "ecom_footer" -%}
-    <!-- Não remova. Checkout Yampi. -->
-    {% capture yampi_snippet_content %}
-      {% include 'YampiSnippet' %}{% endcapture %}
-    {% unless yampi_snippet_content contains 'Liquid error' %}
-      {% include 'YampiSnippet' %}
-    {% endunless %}
-    <!-- Não remova. Checkout Yampi. -->
   </body>
 </html>
