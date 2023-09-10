@@ -560,13 +560,13 @@
             const isSuccess = bundle.dispatchEvent(event);
             console.log(isSuccess)
 
-            var event = new MouseEvent('touchstart', {
+            var event2 = new MouseEvent('touchstart', {
               'bubbles': true,
               'cancelable': true,
               'view': window
             });
-            const isSuccess = bundle.dispatchEvent(event);
-            console.log(isSuccess)
+            const isSuccess2 = bundle.dispatchEvent(event2);
+            console.log(isSuccess2)
           }
         }, 2000);
       });
