@@ -526,19 +526,13 @@
     <!-- Não remova. Checkout Yampi. -->
     <script>
       console.log('FOO')
-      const observer = new MutationObserver(function() {
-        let buyButton = document.querySelector('button#prime-bundles'); // Target the button using the combination of ID and type
 
-        if (buyButton) {
-          buyButton.removeEventListener('click', redirectToYampi); // Remove any existing listeners
-          buyButton.addEventListener('click', redirectToYampi); // Add the redirect listener
-        }
+      const observer = new MutationObserver(function(mutations) {
+        let buyButton = document.querySelector('button#prime-bundles');
+        console.log(buyButton)
       });
 
-      function redirectToYampi(event) {
-        event.preventDefault(); // Stop the default behavior
-        location.href = "/cart"; // Redirect to Yampi checkout
-      }observer.observe(document.body, {
+      observer.observe(document.body, {
         childList: true,
         subtree: true
       });
