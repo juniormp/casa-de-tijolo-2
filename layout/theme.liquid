@@ -516,7 +516,10 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        var buttons = document.querySelectorAll('.prime-bundles');
+        console.log("DENTRO")
+        var buttons = document.querySelectorAll('shopify-payment-button__buttons');
+        console.log("BUTTON")
+        console.log(buttons)
         buttons.forEach(function(button) {
           button.addEventListener('click', function(event) {
             console.log('-------> pb-buy-button-text')
