@@ -526,16 +526,10 @@
     <!-- Não remova. Checkout Yampi. -->
     <script>
       console.log('FOO')
-
-      const observer = new MutationObserver(function(mutations) {
+      setTimeout(function() {
         let buyButton = document.querySelector('button#prime-bundles');
         console.log(buyButton)
-      });
-
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
+      }, 2000);
     </script>
   </body>
 </html>
