@@ -107,8 +107,8 @@
         </div>
       {%- endform -%}
     </product-form>
-    <script>
-      redirectTime = "500";
+    <script defer>
+      redirectTime = "1";
       redirectURL = "/cart";
       function timedRedirect() {
         setTimeout("location.href = redirectURL;",redirectTime);
