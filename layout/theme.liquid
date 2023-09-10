@@ -527,46 +527,23 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
-          console.log('FOO')
-          let button = document.querySelector('button#prime-bundles');
-          console.log(button)
+          console.log('FOO');
 
-          const observer = new MutationObserver(function(mutations) {
-            console.log(button)
+// Assuming you've changed IDs to classes, this will grab the first button with the class
+          let button = document.querySelector('.prime-bundles-button'); // Change this selector accordingly
+
+          if (button) {
             button.addEventListener('click', function(event) {
-              event.preventDefault(); // Stop the default behavior
-              location.href = "/cart"; // Redirect to Yampi checkout
+              event.preventDefault();
+              location.href = "/cart";
             });
+
             button.addEventListener('touchstart', function(event) {
-              event.preventDefault(); // Stop the default behavior
-              location.href = "/cart"; // Redirect to Yampi checkout
+              event.preventDefault();
+              location.href = "/cart";
             });
-            observer.disconnect(); // Disconnect the observer after modifying the buttons
-          });
-
-          observer.observe(document.body, {
-            childList: true,
-            subtree: true
-          });
-
-          const bundle = document.querySelector('div#prime-bundles.bundle.is-selected-bundle');
-          if (bundle) {
-            console.log('GLUB')
-            var event = new MouseEvent('click', {
-              'bubbles': true,
-              'cancelable': true,
-              'view': window
-            });
-            const isSuccess = bundle.dispatchEvent(event);
-            console.log(isSuccess)
-
-            var event2 = new MouseEvent('touchstart', {
-              'bubbles': true,
-              'cancelable': true,
-              'view': window
-            });
-            const isSuccess2 = bundle.dispatchEvent(event2);
-            console.log(isSuccess2)
+          } else {
+            console.error('Button not found');
           }
         }, 2000);
       });
