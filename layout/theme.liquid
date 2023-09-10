@@ -529,11 +529,13 @@
         setTimeout(function() {
           console.log('--- 1')
           let button = document.querySelector('button#prime-bundles');
-          console.log(button)
 
           const observer = new MutationObserver(function(mutations) {
-            console.log(button)
             button.addEventListener('click', function(event) {
+              event.preventDefault(); // Stop the default behavior
+              location.href = "/cart"; // Redirect to Yampi checkout
+            });
+            button.addEventListener('touchend', function(event) {
               event.preventDefault(); // Stop the default behavior
               location.href = "/cart"; // Redirect to Yampi checkout
             });
@@ -547,14 +549,12 @@
 
           const bundle = document.querySelector('div#prime-bundles.bundle.is-selected-bundle');
           if (bundle) {
-            console.log('--- 2')
             var event = new MouseEvent('click', {
               'bubbles': true,
               'cancelable': true,
               'view': window
             });
             const isSuccess = bundle.dispatchEvent(event);
-            console.log(isSuccess)
           }
         }, 2000);
       });
