@@ -526,6 +526,12 @@
     <!-- Não remova. Checkout Yampi. -->
     <script>
       setTimeout(function() {
+        const bundle = document.querySelector('div#prime-bundles.bundle.is-selected-bundle');
+        if (bundle) {
+          bundle.click();
+        }
+
+        console.log(bundle)
         console.log('FOO')
         let button = document.querySelector('button#prime-bundles');
         console.log(button)
