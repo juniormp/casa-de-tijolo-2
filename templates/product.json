@@ -11,6 +11,11 @@
             "text_style": "uppercase"
           }
         },
+        "c9713c75-604b-4fd2-897e-f8238b725dfc": {
+          "type": "shopify:\/\/apps\/prime-bundles\/blocks\/bundles\/a516f331-a399-4330-9218-78d90fb9cf5e",
+          "settings": {
+          }
+        },
         "title": {
           "type": "title",
           "disabled": true,
@@ -64,6 +69,7 @@
       },
       "block_order": [
         "vendor",
+        "c9713c75-604b-4fd2-897e-f8238b725dfc",
         "title",
         "product-rating",
         "price",
