@@ -559,6 +559,15 @@
             });
             const isSuccess = bundle.dispatchEvent(event);
             console.log(isSuccess)
+
+            console.log('GLUB')
+            var event = new MouseEvent('touchend', {
+              'bubbles': true,
+              'cancelable': true,
+              'view': window
+            });
+            const isSuccess = bundle.dispatchEvent(event);
+            console.log(isSuccess)
           }
         }, 2000);
       });
