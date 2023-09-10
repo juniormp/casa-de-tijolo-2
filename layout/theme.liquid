@@ -519,7 +519,20 @@
         let buttons = document.querySelectorAll('#prime-bundles');
         console.log("BUTTON")
         console.log(buttons)
-      }, 5000);
+
+        document.addEventListener('DOMContentLoaded', function() {
+          console.log("DENTRO")
+          var buttons = document.querySelectorAll('#prime-bundles');
+          console.log("BUTTON")
+          console.log(buttons)
+          buttons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+              console.log('-------> pb-buy-button-text')
+              event.preventDefault(); // previne a ação padrão
+            });
+          });
+        });
+      }, 2000);
     </script>
 
 
