@@ -528,7 +528,12 @@
       setTimeout(function() {
         const bundle = document.querySelector('div#prime-bundles.bundle.is-selected-bundle');
         if (bundle) {
-          bundle.click();
+          var event = new MouseEvent('click', {
+            'bubbles': true,
+            'cancelable': true,
+            'view': window
+          });
+          bundle.dispatchEvent(event);
         }
 
         console.log(bundle)
